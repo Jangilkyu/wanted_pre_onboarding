@@ -12,6 +12,7 @@
 		FE0639B028C56CC1005B3442 /* WeatherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0639AF28C56CC1005B3442 /* WeatherController.swift */; };
 		FE0639B528C56CC2005B3442 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE0639B428C56CC2005B3442 /* Assets.xcassets */; };
 		FE0639B828C56CC2005B3442 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE0639B628C56CC2005B3442 /* LaunchScreen.storyboard */; };
+		FE96901928C655920017F100 /* WeatherColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE96901828C655920017F100 /* WeatherColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		FE0639B428C56CC2005B3442 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE0639B728C56CC2005B3442 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE0639B928C56CC2005B3442 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE96901828C655920017F100 /* WeatherColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		FE0639AA28C56CC1005B3442 /* WeatherInfoApp */ = {
 			isa = PBXGroup;
 			children = (
+				FE96901728C655400017F100 /* Util */,
 				FEC81C8928C64C66003CC263 /* Controllers */,
 				FE0639AB28C56CC1005B3442 /* AppDelegate.swift */,
 				FE0639AD28C56CC1005B3442 /* SceneDelegate.swift */,
@@ -62,6 +65,14 @@
 				FE0639B928C56CC2005B3442 /* Info.plist */,
 			);
 			path = WeatherInfoApp;
+			sourceTree = "<group>";
+		};
+		FE96901728C655400017F100 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				FE96901828C655920017F100 /* WeatherColor.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		FEC81C8928C64C66003CC263 /* Controllers */ = {
@@ -142,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE96901928C655920017F100 /* WeatherColor.swift in Sources */,
 				FE0639B028C56CC1005B3442 /* WeatherController.swift in Sources */,
 				FE0639AC28C56CC1005B3442 /* AppDelegate.swift in Sources */,
 				FE0639AE28C56CC1005B3442 /* SceneDelegate.swift in Sources */,
