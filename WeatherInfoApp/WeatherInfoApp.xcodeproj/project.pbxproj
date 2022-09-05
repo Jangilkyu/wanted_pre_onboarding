@@ -13,6 +13,12 @@
 		FE0639B528C56CC2005B3442 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE0639B428C56CC2005B3442 /* Assets.xcassets */; };
 		FE0639B828C56CC2005B3442 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE0639B628C56CC2005B3442 /* LaunchScreen.storyboard */; };
 		FE96901928C655920017F100 /* WeatherColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE96901828C655920017F100 /* WeatherColor.swift */; };
+		FE96902228C657410017F100 /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE96901B28C657400017F100 /* NotoSansKR-Light.otf */; };
+		FE96902328C657410017F100 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE96901C28C657400017F100 /* NotoSansKR-Medium.otf */; };
+		FE96902428C657410017F100 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE96901D28C657400017F100 /* NotoSansKR-Bold.otf */; };
+		FE96902528C657410017F100 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE96901E28C657410017F100 /* NotoSansKR-Black.otf */; };
+		FE96902628C657410017F100 /* NotoSansKR-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE96901F28C657410017F100 /* NotoSansKR-Thin.otf */; };
+		FE96902828C657410017F100 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE96902128C657410017F100 /* NotoSansKR-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		FE0639B728C56CC2005B3442 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE0639B928C56CC2005B3442 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE96901828C655920017F100 /* WeatherColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherColor.swift; sourceTree = "<group>"; };
+		FE96901B28C657400017F100 /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Light.otf"; sourceTree = "<group>"; };
+		FE96901C28C657400017F100 /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
+		FE96901D28C657400017F100 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
+		FE96901E28C657410017F100 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Black.otf"; sourceTree = "<group>"; };
+		FE96901F28C657410017F100 /* NotoSansKR-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Thin.otf"; sourceTree = "<group>"; };
+		FE96902128C657410017F100 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 		FE0639AA28C56CC1005B3442 /* WeatherInfoApp */ = {
 			isa = PBXGroup;
 			children = (
+				FE96901A28C6572E0017F100 /* Fonts */,
 				FE96901728C655400017F100 /* Util */,
 				FEC81C8928C64C66003CC263 /* Controllers */,
 				FE0639AB28C56CC1005B3442 /* AppDelegate.swift */,
@@ -73,6 +86,19 @@
 				FE96901828C655920017F100 /* WeatherColor.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		FE96901A28C6572E0017F100 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FE96901E28C657410017F100 /* NotoSansKR-Black.otf */,
+				FE96901D28C657400017F100 /* NotoSansKR-Bold.otf */,
+				FE96901B28C657400017F100 /* NotoSansKR-Light.otf */,
+				FE96901C28C657400017F100 /* NotoSansKR-Medium.otf */,
+				FE96902128C657410017F100 /* NotoSansKR-Regular.otf */,
+				FE96901F28C657410017F100 /* NotoSansKR-Thin.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		FEC81C8928C64C66003CC263 /* Controllers */ = {
@@ -141,8 +167,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE96902328C657410017F100 /* NotoSansKR-Medium.otf in Resources */,
+				FE96902828C657410017F100 /* NotoSansKR-Regular.otf in Resources */,
+				FE96902628C657410017F100 /* NotoSansKR-Thin.otf in Resources */,
+				FE96902228C657410017F100 /* NotoSansKR-Light.otf in Resources */,
 				FE0639B828C56CC2005B3442 /* LaunchScreen.storyboard in Resources */,
+				FE96902528C657410017F100 /* NotoSansKR-Black.otf in Resources */,
 				FE0639B528C56CC2005B3442 /* Assets.xcassets in Resources */,
+				FE96902428C657410017F100 /* NotoSansKR-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
