@@ -19,6 +19,7 @@
 		FE96902528C657410017F100 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE96901E28C657410017F100 /* NotoSansKR-Black.otf */; };
 		FE96902628C657410017F100 /* NotoSansKR-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE96901F28C657410017F100 /* NotoSansKR-Thin.otf */; };
 		FE96902828C657410017F100 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE96902128C657410017F100 /* NotoSansKR-Regular.otf */; };
+		FE96902A28C658230017F100 /* WeatherFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE96902928C658230017F100 /* WeatherFont.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		FE96901E28C657410017F100 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Black.otf"; sourceTree = "<group>"; };
 		FE96901F28C657410017F100 /* NotoSansKR-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Thin.otf"; sourceTree = "<group>"; };
 		FE96902128C657410017F100 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
+		FE96902928C658230017F100 /* WeatherFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherFont.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				FE96901828C655920017F100 /* WeatherColor.swift */,
+				FE96902928C658230017F100 /* WeatherFont.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				FE96901928C655920017F100 /* WeatherColor.swift in Sources */,
 				FE0639B028C56CC1005B3442 /* WeatherController.swift in Sources */,
 				FE0639AC28C56CC1005B3442 /* AppDelegate.swift in Sources */,
+				FE96902A28C658230017F100 /* WeatherFont.swift in Sources */,
 				FE0639AE28C56CC1005B3442 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
