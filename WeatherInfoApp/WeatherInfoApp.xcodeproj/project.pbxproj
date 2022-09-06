@@ -20,6 +20,7 @@
 		FE96902628C657410017F100 /* NotoSansKR-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE96901F28C657410017F100 /* NotoSansKR-Thin.otf */; };
 		FE96902828C657410017F100 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE96902128C657410017F100 /* NotoSansKR-Regular.otf */; };
 		FE96902A28C658230017F100 /* WeatherFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE96902928C658230017F100 /* WeatherFont.swift */; };
+		FEBD3B2128C6CC9100C69854 /* WeatherDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD3B2028C6CC9100C69854 /* WeatherDetailCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		FE96901F28C657410017F100 /* NotoSansKR-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Thin.otf"; sourceTree = "<group>"; };
 		FE96902128C657410017F100 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		FE96902928C658230017F100 /* WeatherFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherFont.swift; sourceTree = "<group>"; };
+		FEBD3B2028C6CC9100C69854 /* WeatherDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,9 +106,18 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		FEBD3B1F28C6CC5100C69854 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FEBD3B2028C6CC9100C69854 /* WeatherDetailCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		FEC81C8928C64C66003CC263 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FEBD3B1F28C6CC5100C69854 /* Views */,
 				FE0639AF28C56CC1005B3442 /* WeatherController.swift */,
 			);
 			path = Controllers;
@@ -193,6 +204,7 @@
 				FE0639AC28C56CC1005B3442 /* AppDelegate.swift in Sources */,
 				FE96902A28C658230017F100 /* WeatherFont.swift in Sources */,
 				FE0639AE28C56CC1005B3442 /* SceneDelegate.swift in Sources */,
+				FEBD3B2128C6CC9100C69854 /* WeatherDetailCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
