@@ -19,7 +19,7 @@ class WeatherController: UIViewController {
     }()
     
     let collectionView: UICollectionView = {
-        let layout = UICollectionViewLayout()
+        let layout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         return collectionView
     }()
@@ -90,5 +90,15 @@ extension WeatherController: UICollectionViewDataSource {
             withReuseIdentifier: WeatherDetailCellId,
             for: indexPath) as? WeatherDetailCell else { return UICollectionViewCell() }
         return cell
+    }
+}
+
+extension WeatherController:
+    UICollectionViewDelegateFlowLayout {
+    func collectionView(
+      _ collectionView: UICollectionView,
+      layout collectionViewLayout: UICollectionViewLayout,
+      sizeForItemAt indexPath: IndexPath) -> CGSize {
+      return CGSize(width: collectionView.frame.width, height: 150)
     }
 }
