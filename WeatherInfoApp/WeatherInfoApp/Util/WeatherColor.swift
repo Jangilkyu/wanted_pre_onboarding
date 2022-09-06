@@ -9,11 +9,14 @@ import UIKit
 
 enum WeatherColor {
     case darkGray
+    case lightGray
     
     var color: UIColor {
         switch self {
             case .darkGray:
                 return UIColor(r: 44, g: 44, b: 44)
+        case .lightGray:
+                return UIColor(r: 214, g: 214, b: 213)
         }
     }
 }
