@@ -7,6 +7,7 @@
 
 import UIKit
 
+private let WeatherDetailCellId = "WeatherDetailCellId"
 class WeatherController: UIViewController {
     
     let weatherTitleLabel: UILabel = {
@@ -32,6 +33,7 @@ class WeatherController: UIViewController {
         view.backgroundColor = .white
         addViews()
         setConstraints()
+        setConfigureCollectionView()
     }
     
     private func addViews() {
@@ -44,6 +46,13 @@ class WeatherController: UIViewController {
         collectionViewConstraints()
     }
     
+    private func setConfigureCollectionView() {
+        collectionView.register(WeatherDetailCell.self, forCellWithReuseIdentifier: WeatherDetailCellId)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+    }
+    
+    // MARK: - Constraints
     private func weatherTitleLabelConstraints() {
         weatherTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         weatherTitleLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
@@ -59,8 +68,24 @@ class WeatherController: UIViewController {
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
     }
-
-
-
 }
 
+extension WeatherController: UICollectionViewDelegate {
+    
+}
+
+extension WeatherController: UICollectionViewDataSource {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int
+    ) -> Int {
+        return 5
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
+        return UICollectionViewCell()
+    }
+}
