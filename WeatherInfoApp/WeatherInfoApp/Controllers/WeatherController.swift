@@ -16,6 +16,12 @@ class WeatherController: UIViewController {
         lb.textColor = WeatherColor.darkGray.color
         return lb
     }()
+    
+    let collectionView: UICollectionView = {
+        let layout = UICollectionViewLayout()
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        return collectionView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +36,12 @@ class WeatherController: UIViewController {
     
     private func addViews() {
         view.addSubview(weatherTitleLabel)
+        view.addSubview(collectionView)
     }
     
     private func setConstraints() {
         weatherTitleLabelConstraints()
+        collectionViewConstraints()
     }
     
     private func weatherTitleLabelConstraints() {
@@ -42,6 +50,14 @@ class WeatherController: UIViewController {
         weatherTitleLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
         weatherTitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30).isActive = true
         weatherTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+    }
+    
+    private func collectionViewConstraints() {
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.topAnchor.constraint(equalTo: weatherTitleLabel.bottomAnchor, constant: 10).isActive = true
+        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
     }
 
 
