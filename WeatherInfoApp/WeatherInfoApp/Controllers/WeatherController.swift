@@ -86,6 +86,9 @@ extension WeatherController: UICollectionViewDataSource {
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: WeatherDetailCellId,
+            for: indexPath) as? WeatherDetailCell else { return UICollectionViewCell() }
+        return cell
     }
 }
