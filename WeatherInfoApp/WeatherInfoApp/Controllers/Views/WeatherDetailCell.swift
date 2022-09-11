@@ -13,7 +13,7 @@ class WeatherDetailCell: UICollectionViewCell {
         let weatherCityLabel = UILabel()
         weatherCityLabel.text = "Incheon"
         weatherCityLabel.textColor = WeatherColor.darkGray.color
-        weatherCityLabel.font = WeatherFont.Regular.of(size: 30)
+        weatherCityLabel.font = WeatherFont.Medium.of(size: 25)
 //        weatherCityLabel.backgroundColor = .purple
         return weatherCityLabel
     }()
@@ -22,7 +22,7 @@ class WeatherDetailCell: UICollectionViewCell {
         let weatherHumidityLabel = UILabel()
         weatherHumidityLabel.text = "Humidity:"
         weatherHumidityLabel.textColor = WeatherColor.darkGray.color
-        weatherHumidityLabel.font = WeatherFont.Regular.of(size: 15)
+        weatherHumidityLabel.font = WeatherFont.Regular.of(size: 17)
 //        weatherHumidityLabel.backgroundColor = .systemCyan
         return weatherHumidityLabel
     }()
@@ -31,7 +31,7 @@ class WeatherDetailCell: UICollectionViewCell {
         let weatherHumidityPercentLabel = UILabel()
         weatherHumidityPercentLabel.text = "76%"
         weatherHumidityPercentLabel.textColor = WeatherColor.darkGray.color
-        weatherHumidityPercentLabel.font = WeatherFont.Regular.of(size: 15)
+        weatherHumidityPercentLabel.font = WeatherFont.Regular.of(size: 17)
 //        weatherHumidityPercentLabel.backgroundColor = .green
         return weatherHumidityPercentLabel
     }()
@@ -40,7 +40,7 @@ class WeatherDetailCell: UICollectionViewCell {
         let weatherDescriptionLabel = UILabel()
         weatherDescriptionLabel.text = "clear sky"
         weatherDescriptionLabel.textColor = WeatherColor.darkGray.color
-        weatherDescriptionLabel.font = WeatherFont.Regular.of(size: 15)
+        weatherDescriptionLabel.font = WeatherFont.Regular.of(size: 17)
         return weatherDescriptionLabel
     }()
     
@@ -48,7 +48,7 @@ class WeatherDetailCell: UICollectionViewCell {
        let weatherTempLabel = UILabel()
         weatherTempLabel.text = "4°"
 //        weatherTempLabel.textColor = WeatherColor.darkGray.color
-        weatherTempLabel.font = WeatherFont.Regular.of(size: 30)
+        weatherTempLabel.font = WeatherFont.Medium.of(size: 30)
         return weatherTempLabel
     }()
     
@@ -63,7 +63,7 @@ class WeatherDetailCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = WeatherColor.lightGray.color
-        layer.cornerRadius = 10
+        layer.cornerRadius = 20
         setup()
     }
     
