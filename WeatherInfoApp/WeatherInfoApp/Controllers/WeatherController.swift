@@ -106,7 +106,14 @@ class WeatherController: UIViewController {
 }
 
 extension WeatherController: UICollectionViewDelegate {
-    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath
+    ) {
+        let selectedWeatherInfoItem = self.weatherInfo[indexPath.item]
+        let weatherVC = WeatherInfoDetailController(selectedWeatherInfoItem)
+        navigationController?.pushViewController(weatherVC, animated: true)
+    }
 }
 
 extension WeatherController: UICollectionViewDataSource {
@@ -124,10 +131,10 @@ extension WeatherController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: WeatherDetailCellId,
             for: indexPath) as? WeatherDetailCell else { return UICollectionViewCell() }
-        cell.weatherCityLabel.text = "\(self.weatherInfo[indexPath.item].name)"
-        cell.weatherHumidityPercentLabel.text = "\(self.weatherInfo[indexPath.item].main.humidity)%"
-        cell.weatherTempLabel.text = "\(String(format: "%.1f", self.weatherInfo[indexPath.item].main.temp))°"
-//        cell.weatherDescriptionLabel.text = "\(self.weatherInfo[indexPath.item].weather[0].description)"
+            cell.weatherCityLabel.text = "\(self.weatherInfo[indexPath.item].name)"
+            cell.weatherHumidityPercentLabel.text = "\(self.weatherInfo[indexPath.item].main.humidity)%"
+            cell.weatherTempLabel.text = "\(String(format: "%.0f", self.weatherInfo[indexPath.item].main.temp))°"
+            cell.weatherDescriptionLabel.text = "\(self.weatherInfo[indexPath.item].weather[0].description)"
         return cell
     }
 }
