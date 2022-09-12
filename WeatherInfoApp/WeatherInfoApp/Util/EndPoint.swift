@@ -7,16 +7,17 @@
 
 import Foundation
 
-let baseURL: String = "https://api.openweathermap.org/data/2.5/weather?"
+let baseURL: String = "https://api.openweathermap.org/data/2.5"
+let appid = Bundle.main.apiKey
 
 enum WeatherURL {
-    
-    case weatherInfo(q: String, appid: String)
-    
-    var url: String {
-        switch self {
-            case .weatherInfo(let q,let appid):
-                return baseURL + "q=\(q)&appid=\(appid)&units=metric"
-        }
+  
+  case cities
+
+  var url: URL {
+    switch self {
+    case .cities:
+      return URL(string: (baseURL + "/group?id=1842616,1841808,1842225,1842025,1835327,1835224,1841066,1838519,1835895,1835847,1836553,1835553,1835648,1833742,1843491,1845457,1846266,1845759,1845604,1845136&appid=\(appid)&units=metric"))!
     }
+  }
 }
