@@ -11,7 +11,7 @@ private let WeatherDetailCellId = "WeatherDetailCellId"
 class WeatherController: UIViewController {
     
     // MARK: 전국 날씨 정보
-    var weatherInfo: [WeatherInfo] = []
+    var weatherInfoList: [WeatherInfo] = []
     
     // MARK: 날씨 개수
     var weatherCnt: Int = 0
@@ -37,31 +37,25 @@ class WeatherController: UIViewController {
     }
     
     private func fetchData() {
-        let appid = Bundle.main.apiKey
-        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/group?id=1842616,1841808,1842225,1842025,1835327,1835224,1841066,1838519,1835895,1835847,1836553,1835553,1835648,1833742,1843491,1845457,1846266,1845759,1845604,1845136&appid=\(appid)&units=metric") else { return }
-
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-
-        let session = URLSession.shared
-        let dataTask = session.dataTask(with: url) {
-            data, response, error in
-
-            guard error == nil,
-                let httpResponse = (response as? HTTPURLResponse),
-                httpResponse.statusCode == 200,
-
-                let data = data,
-                let decoded = try? JSONDecoder().decode(WeatherInfo1.self, from: data) else { return print("error") }
-            
-                self.weatherInfo = decoded.list
-                self.weatherCnt = decoded.cnt
-            
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
+      let session = URLSession.shared
+      let dataTask = session.dataTask(with: WeatherURL.cities.url) {
+        data, response, error in
+        
+        guard error == nil,
+              let httpResponse = (response as? HTTPURLResponse),
+              httpResponse.statusCode == 200,
+              let data = data,
+              let decoded = try? JSONDecoder().decode(
+                WeatherInfo1.self,
+                from: data) else { return }
+        
+        self.weatherInfoList = decoded.list
+        
+        DispatchQueue.main.async {
+          self.collectionView.reloadData()
         }
-        dataTask.resume()
+      }
+      dataTask.resume()
     }
     
     private func setup() {
@@ -110,7 +104,7 @@ extension WeatherController: UICollectionViewDelegate {
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath
     ) {
-        let selectedWeatherInfoItem = self.weatherInfo[indexPath.item]
+        let selectedWeatherInfoItem = self.weatherInfoList[indexPath.item]
         let weatherVC = WeatherInfoDetailController(selectedWeatherInfoItem)
         navigationController?.pushViewController(weatherVC, animated: true)
     }
@@ -121,7 +115,7 @@ extension WeatherController: UICollectionViewDataSource {
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
     ) -> Int {
-        return self.weatherCnt
+        return weatherInfoList.count
     }
     
     func collectionView(
@@ -131,10 +125,7 @@ extension WeatherController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: WeatherDetailCellId,
             for: indexPath) as? WeatherDetailCell else { return UICollectionViewCell() }
-            cell.weatherCityLabel.text = "\(self.weatherInfo[indexPath.item].name)"
-            cell.weatherHumidityPercentLabel.text = "\(self.weatherInfo[indexPath.item].main.humidity)%"
-            cell.weatherTempLabel.text = "\(String(format: "%.0f", self.weatherInfo[indexPath.item].main.temp))°"
-            cell.weatherDescriptionLabel.text = "\(self.weatherInfo[indexPath.item].weather[0].description)"
+            cell.weatherInfo = weatherInfoList[indexPath.item]
         return cell
     }
 }
