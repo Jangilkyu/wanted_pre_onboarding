@@ -9,12 +9,20 @@ import UIKit
 
 class WeatherDetailCell: UICollectionViewCell {
     
+    var weatherInfo: WeatherInfo? {
+      didSet {
+        guard let data = self.weatherInfo else { return }
+        self.weatherCityLabel.text = "\(data.name)"
+        self.weatherHumidityPercentLabel.text = "\(data.main.humidity)%"
+        self.weatherTempLabel.text = "\(String(format: "%.0f", data.main.temp))°"
+        self.weatherDescriptionLabel.text = "\(data.weather[0].description)"
+      }
+    }
+    
     let weatherCityLabel: UILabel = {
         let weatherCityLabel = UILabel()
-        weatherCityLabel.text = "Incheon"
         weatherCityLabel.textColor = WeatherColor.darkGray.color
         weatherCityLabel.font = WeatherFont.Medium.of(size: 25)
-//        weatherCityLabel.backgroundColor = .purple
         return weatherCityLabel
     }()
     
@@ -23,22 +31,18 @@ class WeatherDetailCell: UICollectionViewCell {
         weatherHumidityLabel.text = "Humidity:"
         weatherHumidityLabel.textColor = WeatherColor.darkGray.color
         weatherHumidityLabel.font = WeatherFont.Regular.of(size: 17)
-//        weatherHumidityLabel.backgroundColor = .systemCyan
         return weatherHumidityLabel
     }()
     
     let weatherHumidityPercentLabel: UILabel = {
         let weatherHumidityPercentLabel = UILabel()
-        weatherHumidityPercentLabel.text = "76%"
         weatherHumidityPercentLabel.textColor = WeatherColor.darkGray.color
         weatherHumidityPercentLabel.font = WeatherFont.Regular.of(size: 17)
-//        weatherHumidityPercentLabel.backgroundColor = .green
         return weatherHumidityPercentLabel
     }()
     
     let weatherDescriptionLabel: UILabel = {
         let weatherDescriptionLabel = UILabel()
-        weatherDescriptionLabel.text = "clear sky"
         weatherDescriptionLabel.textColor = WeatherColor.darkGray.color
         weatherDescriptionLabel.font = WeatherFont.Regular.of(size: 17)
         return weatherDescriptionLabel
@@ -46,16 +50,12 @@ class WeatherDetailCell: UICollectionViewCell {
     
     let weatherTempLabel: UILabel = {
        let weatherTempLabel = UILabel()
-        weatherTempLabel.text = "4°"
-//        weatherTempLabel.textColor = WeatherColor.darkGray.color
         weatherTempLabel.font = WeatherFont.Medium.of(size: 30)
         return weatherTempLabel
     }()
     
     let weatherImgView: UIImageView = {
         let weatherImgView = UIImageView()
-        weatherImgView.backgroundColor = .red
-        weatherImgView.image = UIImage(named: "w")
         return weatherImgView
         
     }()
