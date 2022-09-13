@@ -34,7 +34,11 @@ class WeatherInfoDetailController: UIViewController {
     convenience init(_ weatherInfo: WeatherInfo) {
         self.init()
         self.weatherInfo = weatherInfo
-        
+        let icon = self.weatherInfo.weather[0].icon
+//        .weatherImgView.load(url: WeatherURL.image(icon: icon).url)
+        self.weatherImgView.load(url: WeatherURL.image(icon: icon).url)
+
+
         setup()
     }
     
@@ -74,7 +78,7 @@ class WeatherInfoDetailController: UIViewController {
         weatherTopInfoView.translatesAutoresizingMaskIntoConstraints = false
         weatherTopInfoView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15).isActive = true
         weatherTopInfoView.topAnchor.constraint(equalTo: weatherImgView.bottomAnchor, constant: 10).isActive = true
-        weatherTopInfoView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
+        weatherTopInfoView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25).isActive = true
 //        weatherTopInfoView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
@@ -82,7 +86,7 @@ class WeatherInfoDetailController: UIViewController {
 //        weatherBottomInfoView.backgroundColor = .brown
         weatherBottomInfoView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.07).isActive = true
         weatherBottomInfoView.translatesAutoresizingMaskIntoConstraints = false
-        weatherBottomInfoView.topAnchor.constraint(equalTo: weatherTopInfoView.bottomAnchor, constant: 10).isActive = true
+        weatherBottomInfoView.topAnchor.constraint(equalTo: weatherTopInfoView.bottomAnchor, constant: 50).isActive = true
         weatherBottomInfoView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         weatherBottomInfoView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
     }
