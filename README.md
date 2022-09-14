@@ -5,6 +5,19 @@
 WeatherInfoApp은 [https://openweathermap.org/api](openweathermap)에서 제공하는 날씨 데이터 API를 사용하여 진행했습니다.
 
 
+- [이슈 관리](https://github.com/Jangilkyu/wanted_pre_onboarding/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc)
+
+- 브랜치
+   - main
+   - develop
+   - feat/이슈번호/구현할 내용
+   
+## Usage
+
+AppKey는 WeatherInfo.plist에 등록하여야 사용이 가능합니다.
+
+<img width="830" alt="스크린샷 2022-09-14 오후 10 31 08" src="https://user-images.githubusercontent.com/69107255/190167578-8415cf89-e1ea-4af7-8232-6e4c0f80c33b.png">
+
 ## 🚌 프로젝트 과정
 
 ### **🖥 메인화면**
