@@ -37,4 +37,4 @@ TableView와 CollectionView에 가장 큰 차이점은 CollectionView가 cell을
 
 [How to get the data of multiple cities using openweathermap api in angularjs?](https://stackoverflow.com/questions/39053305/how-to-get-the-data-of-multiple-cities-using-openweathermap-api-in-angularjs/72177084#72177084)
 
-
+[#29번 city List 정리 이슈](https://github.com/Jangilkyu/wanted_pre_onboarding/issues/29)에서 id값을 얻을 수 있었고, 각 지역에 대한 id를 group으로 묶어서 API 콜을 하게 되면 원하는 지역에 날씨 정보를 얻을 수 있었다.
