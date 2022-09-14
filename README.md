@@ -39,6 +39,37 @@ TableView와 CollectionView에 가장 큰 차이점은 CollectionView가 cell을
 
 [#29번 city List 정리 이슈](https://github.com/Jangilkyu/wanted_pre_onboarding/issues/29)에서 id값을 얻을 수 있었고, 각 지역에 대한 id를 group으로 묶어서 API 콜을 하게 되면 원하는 지역에 날씨 정보를 얻을 수 있었다.
 
+## **fetchData()**
+
+```swift
+  private func fetchData() {
+     //1. 네트워크를 처리하기 위한 URLSession에 shared 객체를 사용해 session 선언
+    let session = URLSession.shared
+	  // 1. url 설정 후 URL에 데이터를 요청하는 session.dataTask 작업객체 구현
+    let dataTask = session.dataTask(with: WeatherURL.cities.url) {
+      // async
+      data, response, error in
+      // 에러가 없을경우
+      guard error == nil,
+            // 정상 응답 일 경우
+            let httpResponse = (response as? HTTPURLResponse),
+            httpResponse.statusCode == 200,
+            // JsonDecode
+            let data = data,
+            let decoded = try? JSONDecoder().decode(
+              WeatherInfo1.self,
+              from: data) else { return }
+      
+      self.weatherInfoList = decoded.list
+      
+      DispatchQueue.main.async {
+        self.collectionView.reloadData()
+      }
+    }
+    // 기본적으로 함수 내부는 sync이기 때문에 dataTask.resume()를 호출한다.
+    dataTask.resume()
+```
+
 
 **🙇🏻‍♂️두번째 화면 구현에 있어서 고민해본 점 및 과정**
 
