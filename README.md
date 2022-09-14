@@ -38,3 +38,24 @@ TableView와 CollectionView에 가장 큰 차이점은 CollectionView가 cell을
 [How to get the data of multiple cities using openweathermap api in angularjs?](https://stackoverflow.com/questions/39053305/how-to-get-the-data-of-multiple-cities-using-openweathermap-api-in-angularjs/72177084#72177084)
 
 [#29번 city List 정리 이슈](https://github.com/Jangilkyu/wanted_pre_onboarding/issues/29)에서 id값을 얻을 수 있었고, 각 지역에 대한 id를 group으로 묶어서 API 콜을 하게 되면 원하는 지역에 날씨 정보를 얻을 수 있었다.
+
+
+**🙇🏻‍♂️두번째 화면 구현에 있어서 고민해본 점 및 과정**
+
+<img width="321" alt="image" src="https://user-images.githubusercontent.com/69107255/190158250-ecbf8e14-b33f-4bd3-b519-bd1cef1c66d8.png">
+
+
+스토리보드 없이 code base로 레이아웃을 잡기 때문에 두 개의 UIView를 만들어서 관리하였습니다.
+
+**📂[WeatherTopInfoView.swift](https://github.com/Jangilkyu/wanted_pre_onboarding/blob/main/WeatherInfoApp/WeatherInfoApp/Controllers/SubViews/WeatherTopInfoView.swift)**
+
+<img width="249" alt="image" src="https://user-images.githubusercontent.com/69107255/190159033-5d848cdc-5dbc-482b-a833-5358bd39cf05.png">
+
+**📂[WeatherBottomInfoView.swift](https://github.com/Jangilkyu/wanted_pre_onboarding/blob/main/WeatherInfoApp/WeatherInfoApp/Controllers/SubViews/WeatherBottomInfoView.swift)**
+
+
+<img width="231" alt="스크린샷 2022-09-14 오후 9 57 31" src="https://user-images.githubusercontent.com/69107255/190160095-52a48d0b-88a1-4d05-9c57-e72717637241.png">
+
+# **완성 화면**
+
+![날씨앱화면](https://user-images.githubusercontent.com/69107255/190163916-8241c2d9-0a91-4ed4-af3f-d6d892c172b6.gif)
